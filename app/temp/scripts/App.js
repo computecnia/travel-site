@@ -11109,6 +11109,10 @@ var _Modal = __webpack_require__(7);
 
 var _Modal2 = _interopRequireDefault(_Modal);
 
+var _TypeWrite = __webpack_require__(8);
+
+var _TypeWrite2 = _interopRequireDefault(_TypeWrite);
+
 var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
@@ -11120,6 +11124,7 @@ new _RevealOnScroll2.default((0, _jquery2.default)(".feature-item"), "85%");
 new _RevealOnScroll2.default((0, _jquery2.default)(".testimonial"), "60%");
 new _StickyHeader2.default();
 new _Modal2.default();
+new _TypeWrite2.default();
 
 /***/ }),
 /* 3 */
@@ -11773,6 +11778,54 @@ var Modal = function () {
 }();
 
 exports.default = Modal;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var TypeWrite = function () {
+	function TypeWrite() {
+		_classCallCheck(this, TypeWrite);
+
+		this.counter = 0;
+		this.txt = "The typed text.";
+		this.el = (0, _jquery2.default)(".large-hero__subtitle");
+		this.typeWriter();
+	}
+
+	_createClass(TypeWrite, [{
+		key: "typeWriter",
+		value: function typeWriter() {
+			if (this.counter < this.txt.length) {
+				alert(this.el.html);
+				this.el.html = this.el.html + this.txt.charAt(this.counter);
+				setTimeout(this.typeWriter.bind(this), 50);
+				this.counter++;
+			}
+		}
+	}]);
+
+	return TypeWrite;
+}();
+
+exports.default = TypeWrite;
 
 /***/ })
 /******/ ]);
